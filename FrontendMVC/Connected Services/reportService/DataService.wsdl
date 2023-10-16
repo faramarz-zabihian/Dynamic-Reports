@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost/DataService/DataService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost/DataService/DataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/DataService/DataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ReportBase" />
+      <xsd:import schemaLocation="http://localhost/DataService/DataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReportServiceContract_GetTemplateNames_InputMessage">
+    <wsdl:part name="parameters" element="GetTemplateNames" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_GetTemplateNames_OutputMessage">
+    <wsdl:part name="parameters" element="GetTemplateNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_ReportList_InputMessage">
+    <wsdl:part name="parameters" element="ReportList" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_ReportList_OutputMessage">
+    <wsdl:part name="parameters" element="ReportListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_GetColumns_InputMessage">
+    <wsdl:part name="parameters" element="GetColumns" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_GetColumns_OutputMessage">
+    <wsdl:part name="parameters" element="GetColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_ReportSave_InputMessage">
+    <wsdl:part name="parameters" element="ReportSave" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_ReportSave_OutputMessage">
+    <wsdl:part name="parameters" element="ReportSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_ReportDrop_InputMessage">
+    <wsdl:part name="parameters" element="ReportDrop" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_ReportDrop_OutputMessage">
+    <wsdl:part name="parameters" element="ReportDropResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_ReportLoad_InputMessage">
+    <wsdl:part name="parameters" element="ReportLoad" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_ReportLoad_OutputMessage">
+    <wsdl:part name="parameters" element="ReportLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_DataPage_InputMessage">
+    <wsdl:part name="parameters" element="DataPage" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_DataPage_OutputMessage">
+    <wsdl:part name="parameters" element="DataPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_XSLTranslator_InputMessage">
+    <wsdl:part name="parameters" element="XSLTranslator" />
+  </wsdl:message>
+  <wsdl:message name="IReportServiceContract_XSLTranslator_OutputMessage">
+    <wsdl:part name="parameters" element="XSLTranslatorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReportServiceContract">
+    <wsdl:operation name="GetTemplateNames">
+      <wsdl:input wsaw:Action="urn:IReportServiceContract/GetTemplateNames" message="IReportServiceContract_GetTemplateNames_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IReportServiceContract/GetTemplateNamesResponse" message="IReportServiceContract_GetTemplateNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportList">
+      <wsdl:input wsaw:Action="urn:IReportServiceContract/ReportList" message="IReportServiceContract_ReportList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IReportServiceContract/ReportListResponse" message="IReportServiceContract_ReportList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColumns">
+      <wsdl:input wsaw:Action="urn:IReportServiceContract/GetColumns" message="IReportServiceContract_GetColumns_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IReportServiceContract/GetColumnsResponse" message="IReportServiceContract_GetColumns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportSave">
+      <wsdl:input wsaw:Action="urn:IReportServiceContract/ReportSave" message="IReportServiceContract_ReportSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IReportServiceContract/ReportSaveResponse" message="IReportServiceContract_ReportSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportDrop">
+      <wsdl:input wsaw:Action="urn:IReportServiceContract/ReportDrop" message="IReportServiceContract_ReportDrop_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IReportServiceContract/ReportDropResponse" message="IReportServiceContract_ReportDrop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportLoad">
+      <wsdl:input wsaw:Action="urn:IReportServiceContract/ReportLoad" message="IReportServiceContract_ReportLoad_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IReportServiceContract/ReportLoadResponse" message="IReportServiceContract_ReportLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataPage">
+      <wsdl:input wsaw:Action="urn:IReportServiceContract/DataPage" message="IReportServiceContract_DataPage_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IReportServiceContract/DataPageResponse" message="IReportServiceContract_DataPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XSLTranslator">
+      <wsdl:input wsaw:Action="urn:IReportServiceContract/XSLTranslator" message="IReportServiceContract_XSLTranslator_InputMessage" />
+      <wsdl:output wsaw:Action="urn:IReportServiceContract/XSLTranslatorResponse" message="IReportServiceContract_XSLTranslator_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

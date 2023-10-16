@@ -1,0 +1,476 @@
+@font-face {
+    font-family: 'B1';
+    src: url('~//Font/BYekan.eot?#') format('eot'), url('~/Font/BYekan.woff') format('woff'), url('~/Font/BYekan.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'B2';
+    src: url('~/Font/BNazanin.eot?#') format('eot'), url('~/Font/BNazanin.woff') format('woff'), url('~/Font/BNazanin.ttf') format('truetype');
+}
+
+.rpReport input, #windoPopup input, #messageBox #winParam input {
+    color: gray;
+    background-color: #F7FCFF;
+    font-family: B2;
+    font-size: 11pt;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid #808080;
+    margin: 1px 0 1px 0;
+}
+
+    .rpReport input:focus {
+        box-shadow: 4px 4px 10px #719ECE;
+    }
+
+    .rpReport input[type="checkbox"] {
+        background: transparent;
+        width: auto;
+    }
+
+.rpReport .searchPanel {
+    padding-left: 10px;
+    color: #444;
+}
+
+
+.rpReport #txtSearchCol {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.rpReport #txtFirstNameReport {
+    width: 150px;
+}
+
+.rpReport #cmbFontFace {
+    border: 1px solid gray;
+    margin-right: 3px;
+}
+
+.ui-menu .ui-menu-item {
+    font-family: "B2" !important;
+    font-size: 11pt !important;
+    direction: rtl;
+}
+
+.ui-widget {
+    font-family: B2 !important;
+    font-size: 11pt !important;
+    color: #666 !important;
+}
+
+.ui-autocomplete-input {
+    width: 100px !important;
+    z-index: 1000 !important;
+    border: 1px solid gray !important;
+    border-radius: 0 !important;
+}
+
+.ui-button {
+    margin-right: 0 !important;
+    margin-top: 1px !important;
+    border-radius: 0 !important;
+    border: 1px solid gray !important;
+    border-right: none !important;
+    width: 16px !important;
+    height: 22px !important;
+}
+
+select#cmbOperator {
+    font-size: 8pt;
+}
+
+.ui-autocomplete.ui-widget {
+    direction: rtl;
+}
+
+#controlPanel {
+    padding-top: 3px;
+    padding-bottom: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: rgb(193,201,232);
+    height: 30px;
+    border: 1px outset silver;
+}
+
+.ui-button {
+    width: 16px;
+    height: 20px;
+}
+
+ul#ulFilterRep, ul#ulSortRep, ul#ulGroupByRep, ul#ulAggrigateRep, ul#ulParameterRep, ul#ulSource, ul#ulColRep {
+    overflow-y: scroll;
+    padding-top: 0;
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+
+ul#ulColRep {
+    height: 387px;
+}
+
+ul#ulSource {
+    height: 498px;
+}
+
+ul#ulFilterRep, ul#ulSortRep, ul#ulGroupByRep, ul#ulAggrigateRep, ul#ulParameterRep {
+    height: 100px;
+}
+
+.divBorder {
+    border-radius: 5px;
+    border: 1px solid silver;
+    margin-bottom: 2px;
+    background-color: rgb(239,238,239);
+    overflow: hidden;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+
+    .divBorder .columns {
+        width: 330px;
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+
+    .divBorder .selColumns {
+        width: 390px;
+        margin-left: 20px;
+    }
+
+    .divBorder .colOrders {
+        width: 280px;
+        margin-left: 10px;
+    }
+
+div.rpReport {
+    width: 1070px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+.rpReport * {
+    font-family: B2;
+}
+
+div.rpReport div.title {
+    font-family: B2;
+    font-size: 16pt;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+div.rpReport div.subTitle {
+    font-size: 13pt;
+    color: orange;
+    font-weight: 500;
+    text-align: left;
+}
+
+th[scope="col_head"] {
+    font-family: 'B2' !important;
+    font-size: 14pt;
+    font-weight: bold;
+    background-color: #F7FCFF;
+}
+
+
+
+.rpReport {
+    direction: rtl;
+}
+
+.rpReportTableStyle {
+    border: 1px dashed silver;
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+
+    .rpReportTableStyle td, .rpReportTableStyle th {
+        padding: 5px;
+        border: 1px dotted silver;
+        color: #632a39;
+    }
+
+    .rpReportTableStyle th {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .rpReportTableStyle td {
+        text-align: initial;
+        vertical-align: middle;
+    }
+
+    .rpReportTableStyle th[scope=col] {
+        border-bottom: 2px solid #333;
+        border-right: 2px solid #333;
+        color: #000;
+        background-color: #8fadcc;
+    }
+
+    .rpReportTableStyle th + th[scope=col] {
+        border-right: 1px dotted #666;
+        color: #fff;
+        background-color: #7d98b3;
+    }
+
+    .rpReportTableStyle th[scope=row] {
+        border-right: 2px solid #333;
+        background-color: #b8cfe5;
+    }
+
+
+
+    .rpReportTableStyle tr.alt th, .pretty-table tr.alt td {
+        color: #2a4763;
+    }
+
+    .rpReportTableStyle td.groupClass {
+        text-align: right;
+    }
+
+    .rpReportTableStyle td.groupClass4 {
+        background-color: rgb(169, 208,142);
+    }
+
+    .rpReportTableStyle td.groupClass3 {
+        background-color: #b8cfe5;
+    }
+
+    .rpReportTableStyle td.groupClass2 {
+        background-color: #89B9C6 !important;
+        //background-color: rgb(169, 208,142);
+        border-left: 1px dotted black;
+    }
+
+    .rpReportTableStyle td.groupClass1 {
+        background-color: #BADBE4 !important;
+        //background-color: rgb(198,224,180);
+        border-left: 1px dotted black;
+    }
+
+    .rpReportTableStyle th[scope=pg_col_head] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .rpReportTableStyle th[scope=rp_col_head] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .rpReportTableStyle th[scope=gp_col_head] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .rpReportTableStyle td[scope=pg_sum_col] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .rpReportTableStyle td[scope=rp_sum_col] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .rpReportTableStyle td[scope=gp_sum_col] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .rpReportTableStyle td[scope=gp_span_cells] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .rpReportTableStyle td[scope=rp_span_cells] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .rpReportTableStyle td[scope=pg_span_cells] {
+        border-bottom: none;
+        border-top: none;
+    }
+
+@page {
+    size: 5.5in 8.5in;
+    margin: 10%;
+}
+
+@page {
+    size: A4 landscape;
+    margin: 10%;
+}
+
+img:hover, img:hover, img:hover, img:hover {
+    /*box-shadow: 0px 0px 6px blue;*/
+    box-shadow: 0px 0px 10px #ffa441;
+}
+
+img:active, img:active, img:active, img:active {
+    box-shadow: 0px 0px 5px blue;
+}
+
+
+#windoPopup, #messageBox #winParam {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+    display: none;
+    padding: 20px;
+    direction: rtl;
+}
+
+#messageBox, #winParam {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+    display: none;
+    padding: 20px;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.rpReportTableStyle {
+    border-radius: 10px !important;
+}
+
+.progress {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+    display: none;
+    padding: 20px;
+}
+
+
+.divTitle {
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-top: 1px solid silver;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgb(224,229,241);
+    padding-top: 1px;
+    padding-bottom: 4px;
+    height: 22px;
+    font-weight: bold;
+    padding-right: 15px;
+    color: rgb(40,52,115);
+}
+
+.divContent {
+    background-color: white;
+    border: 1px solid silver;
+    border-top: none;
+    vertical-align: top;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 7px;
+    padding-right: 3px;
+}
+
+
+
+
+#feedback {
+    font-size: 1.4em;
+}
+
+.ulClass {
+    -webkit-padding-start: 0px !important;
+    -moz-padding-start: 0px !important;
+    padding-right: 0;
+}
+
+    .ulClass .ui-selecting {
+        background: #ffa441;
+    }
+
+    .ulClass .ui-selected {
+        background: #ffa441;
+        color: white;
+    }
+
+    .ulClass li {
+        background: #555;
+        padding: 5px;
+        border-left: 1px solid #fff;
+        color: #fff;
+        background: #eee;
+        border-left: 1px solid #fff;
+        vertical-align: top;
+    }
+
+    .ulClass li {
+        display: block;
+        list-style-type: none !important;
+        cursor: move;
+        margin: 1px !important;
+        padding: 2px 5px 2px !important;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background: rgb(222,240,245);
+        color: black;
+        width: 95%;
+        position: relative;
+        text-align: right;
+    }
+
+li.selected {
+    background-color: rgb(173, 218, 231);
+}
+
+.custom-combobox {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+}
+
+.custom-combobox-input {
+    font-size: 10pt;
+}
+
+.custom-combobox a.ui-button {
+    height: 23px;
+    vertical-align: top;
+}
+
+.custom-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+}
+
+.custom-combobox-input {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+
+
+.rpReportTableStyle td, .rpReportTableStyle th {
+    color: #444444 !important;
+}
+
+
+.ui-autocomplete {
+    z-index: 9999999999999 !important;
+}

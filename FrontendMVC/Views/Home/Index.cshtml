@@ -1,0 +1,70 @@
+﻿@using TestMVC.Controllers;
+<head>
+    <h1>@ViewBag.Title</h1>
+</head>
+
+<div id="rpt" style="margin-top:10px">
+    <table width="100%">
+        <tr>
+            <td valign="top">
+                <table border="0" cellspacing="0" cellpadding="10px">
+                    <caption>
+                        Application Report templates
+                    </caption>
+                    @foreach (var t in ((HomeController)this.ViewContext.Controller).TemplatesList())
+                    {
+                        <tr>
+                            <th valign="top">@t.Name</th>
+                            <td valign="top">
+                                <div>
+                                    <input type="button" value="Sample" onclick=javascipt:oIndex.generateSample("@t.Name") /> &nbsp;
+                                    @Html.ActionLink("Design", "Designer", new { templateID = t.Name })
+                                </div>
+                                <table>
+                                    <tr>
+                                        <td><a onclick="javascript:exec(1)" href=""> Name 1 </a></td>
+                                        <td><input type="button" value="Load"> &nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a onclick="javascript:exec(2)" href=""> Name 2 </a></td>
+                                        <td><input type="button" value="Load"> &nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </td>
+            <td id="result"></td>
+        </tr>
+    </table>
+</div>
+
+<a href="javascript:download()">download excel</a>
+<br />
+<a href="javascript:downloadDoc()">download doc</a>
+<br />
+<a href="javascript:downloadPdf()">download pdf</a>
+
+@section styles {
+    <link href="@Url.Content("~/content/cust/rpReport.css")" rel="stylesheet" type="text/css" />
+}
+
+@section scripts {
+    <script>
+        //var exports = {};
+        //var FSP = {};
+    </script>
+    <script src="~/Scripts/cust/jquery.xslt.js"></script>
+    <script src="@Url.Content("~")Scripts/cust/Index.js"></script>
+    <script>
+        var r = null;
+        var templateID = "AmlakLive";
+        
+        window.onload = function ()
+        {
+            oIndex.setServiceURL("@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~")@Url.ControllerName()");
+            oIndex.listTemplates();
+        }
+    </script>
+}

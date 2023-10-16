@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ReportBase" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ReportBase" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/DataService/DataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfNameDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameDescription" nillable="true" type="tns:NameDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNameDescription" nillable="true" type="tns:ArrayOfNameDescription" />
+  <xs:complexType name="NameDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="App" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameDescription" nillable="true" type="tns:NameDescription" />
+  <xs:complexType name="ArrayOfReportTemplateColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportTemplateColumn" nillable="true" type="tns:ReportTemplateColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportTemplateColumn" nillable="true" type="tns:ArrayOfReportTemplateColumn" />
+  <xs:complexType name="ReportTemplateColumn">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbsReportTemplateColumn">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportTemplateColumn" nillable="true" type="tns:ReportTemplateColumn" />
+  <xs:complexType name="AbsReportTemplateColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbsReportTemplateColumn" nillable="true" type="tns:AbsReportTemplateColumn" />
+  <xs:complexType name="ReportModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aggregates" nillable="true" type="tns:ArrayOfReportModel.Aggregate" />
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfReportModel.Column" />
+      <xs:element minOccurs="0" name="CurrentPage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:ArrayOfReportModel.FilterColumn" />
+      <xs:element minOccurs="0" name="FontFace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontSize" type="xs:int" />
+      <xs:element minOccurs="0" name="Groupby" nillable="true" type="tns:ArrayOfReportModel.Group" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orderby" nillable="true" type="tns:ArrayOfReportModel.Order" />
+      <xs:element minOccurs="0" name="PageCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfReportModel.Parameter" />
+      <xs:element minOccurs="0" name="PrintDate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PrintRowNo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PrintUnderLine" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mergeIndex" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportModel" nillable="true" type="tns:ReportModel" />
+  <xs:complexType name="ArrayOfReportModel.Aggregate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportModel.Aggregate" nillable="true" type="tns:ReportModel.Aggregate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportModel.Aggregate" nillable="true" type="tns:ArrayOfReportModel.Aggregate" />
+  <xs:complexType name="ReportModel.Aggregate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="positions" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportModel.Aggregate" nillable="true" type="tns:ReportModel.Aggregate" />
+  <xs:complexType name="ArrayOfReportModel.Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportModel.Column" nillable="true" type="tns:ReportModel.Column" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportModel.Column" nillable="true" type="tns:ArrayOfReportModel.Column" />
+  <xs:complexType name="ReportModel.Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alignment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="FontFace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontSize" type="xs:int" />
+      <xs:element minOccurs="0" name="MergeGroupPosition" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportModel.Column" nillable="true" type="tns:ReportModel.Column" />
+  <xs:complexType name="ArrayOfReportModel.FilterColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportModel.FilterColumn" nillable="true" type="tns:ReportModel.FilterColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportModel.FilterColumn" nillable="true" type="tns:ArrayOfReportModel.FilterColumn" />
+  <xs:complexType name="ReportModel.FilterColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Negate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Operand1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operand2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportModel.FilterColumn" nillable="true" type="tns:ReportModel.FilterColumn" />
+  <xs:complexType name="ArrayOfReportModel.Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportModel.Group" nillable="true" type="tns:ReportModel.Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportModel.Group" nillable="true" type="tns:ArrayOfReportModel.Group" />
+  <xs:complexType name="ReportModel.Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupMerge" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ISReportGroup" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageBreak" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportModel.Group" nillable="true" type="tns:ReportModel.Group" />
+  <xs:complexType name="ArrayOfReportModel.Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportModel.Order" nillable="true" type="tns:ReportModel.Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportModel.Order" nillable="true" type="tns:ArrayOfReportModel.Order" />
+  <xs:complexType name="ReportModel.Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportModel.Order" nillable="true" type="tns:ReportModel.Order" />
+  <xs:complexType name="ArrayOfReportModel.Parameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportModel.Parameter" nillable="true" type="tns:ReportModel.Parameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportModel.Parameter" nillable="true" type="tns:ArrayOfReportModel.Parameter" />
+  <xs:complexType name="ReportModel.Parameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inputType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prompt" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportModel.Parameter" nillable="true" type="tns:ReportModel.Parameter" />
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿@using TestMVC.Controllers;
+@model HomeController.MyModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/cust/rpReport.css" rel="stylesheet" />
+</head>
+<meta name="viewport" content="width=device-width" />
+<body>
+    <div class="rpReport">
+        @Html.Partial("../Shared/_DesignerPartial")
+    </div>
+</body>
+</html>
+
+@section styles {
+    <link href="@Url.Content("~/content/cust/rpReport.css")" rel="stylesheet" type="text/css" />
+}
+
+@section scripts {
+    <script src="~/Scripts/jquery-ui-touch-punch.js"></script>
+    <script src="~/Scripts/cust/jquery.xslt.js"></script>
+    <script src="~/Scripts/cust/jquery.bpopup.min.js"></script>
+    <script src="~/Scripts/cust/jquery-combobox.js"></script>
+    <script src="~/Scripts/cust/designer.js"></script>
+    <script>
+        $(()=> {
+            oDesigner.setServiceURL("@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~")@Url.ControllerName()");
+            oDesigner.initDesigner("@Model.TemplateId")
+        });
+    </script>
+}

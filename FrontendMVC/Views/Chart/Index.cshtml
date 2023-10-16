@@ -1,0 +1,30 @@
+﻿@using TestMVC.Controllers;
+@{
+    ViewBag.Title = "Chart";
+}
+
+<head>
+    <h1>@ViewBag.Title</h1>
+    <style>
+        @Html.Raw(((ChartViewController)this.ViewContext.Controller).GetStyles())
+    </style>
+    <style id="mystyle"></style>
+</head>
+
+
+<script id="myScript"></script>
+<script type="text/javascript">
+    function graph() {
+        var myChart = new Graph();
+        myChart.rows.push("A1");
+        myChart.rows.push("A7");
+        myChart.rows.push("A12");
+        myChart.name = "GroupedBar";
+        myChart.execute("graph", "mystyle");
+    }
+</script>
+<script>
+    @Html.Raw(((ChartViewController)this.ViewContext.Controller).GetScripts())
+</script>
+<div id="graph"></div>
+<input type="button" onclick="javascript: graph()" />

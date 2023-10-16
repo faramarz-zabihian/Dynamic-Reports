@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.23.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@types/jquery": "^3.5.22",
+    "eslint": "^8.51.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}

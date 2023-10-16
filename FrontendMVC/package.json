@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@types/jquery": "^3.5.22",
+    "eslint": "^8.51.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "webpack-it": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js"
+  }
+}

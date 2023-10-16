@@ -1,0 +1,49 @@
+{
+  "Name": "dbAdventureWorksDW",
+  "Templates": [
+    {
+      "Name": "Ann",
+      "Title": "Product Table report",
+      "Command": {
+        "Parameters": [],
+        "SQL": "select * from Production.Product" // instead of * column names can be specified, which make the query a bit more efficient
+      },
+      "Columns": [
+        {
+          "name": "ID",
+          "title": "Product ID",
+          "type": "string",
+          "expr": "ProductID",
+          "width": 0
+        },
+        {
+          "name": "ProductNo.",
+          "title": "Product Number",
+          "type": "string",
+          "expr": "ProductNumber",
+          "width": 0
+        },
+        {
+          "name": "Color",
+          "title": "Color",
+          "type": "string",
+          "width": 0
+        },
+        {
+          "name": "SSLevel",
+          "title": "Safety Stock Level",
+          "type": "number",
+          "expr": "SafetyStockLevel",
+          "width": 0
+        },
+        {
+          "name": "ReorderPoint",
+          "title": "Reorder Point",
+          "type": "number",
+          "width": 0
+        }
+
+      ]
+    }
+  ]
+}
