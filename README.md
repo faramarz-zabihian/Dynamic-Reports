@@ -1,4 +1,4 @@
-# Dynamic report generator (web-baes)
+# Dynamic report generator (web-based)
 
 This is a web-based reporting tool with a very user-friendly interface, allowing business application users to create and preview custom tabular reports and download them as full PDF, Word, or Excel files. It is fast and easy to use.
 
